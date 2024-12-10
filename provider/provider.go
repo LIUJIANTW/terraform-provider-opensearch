@@ -258,6 +258,9 @@ func Provider() *schema.Provider {
 
 func providerConfigure(c context.Context, d *schema.ResourceData) (interface{}, diag.Diagnostics) {
 	rawUrl := d.Get("url").(string)
+	fmt.Println("-----------------")
+	fmt.Println(rawUrl)
+	fmt.Println("-----------------")
 	parsedUrl, err := url.Parse(rawUrl)
 	if err != nil {
 		return nil, diag.FromErr(err)
